@@ -315,7 +315,7 @@ const SpacedRepetition = {
 
     books.forEach(book => {
       if (!book) return;
-      const words = VOCABULARY_DATA.words[book.id] || [];
+      const words = VOCABULARY_WORDS[book.id] || [];
 
       words.forEach(word => {
         const schedule = AppState.stats.reviewSchedule[book.id]?.[word.id];
@@ -388,7 +388,7 @@ const BooksRenderer = {
   renderBookCard(book) {
     const learnedWords = AppState.stats.wordsLearned[book.id]?.length || 0;
     const progress = (learnedWords / book.wordsCount) * 100;
-    const bookWords = VOCABULARY_DATA.words[book.id] || [];
+    const bookWords = VOCABULARY_WORDS[book.id] || [];
 
     return `
       <div class="book-card" data-book-id="${book.id}">
@@ -518,7 +518,7 @@ const Learning = {
     if (!book) return;
 
     AppState.currentBook = book;
-    const bookWords = VOCABULARY_DATA.words[book.id] || [];
+    const bookWords = VOCABULARY_WORDS[book.id] || [];
 
     // Create learning queue
     AppState.learningQueue = bookWords.map((word, index) => ({
@@ -912,7 +912,7 @@ const WordBook = {
 
     // Get all learned words
     VOCABULARY_DATA.books.forEach(book => {
-      const bookWords = VOCABULARY_DATA.words[book.id] || [];
+      const bookWords = VOCABULARY_WORDS[book.id] || [];
       bookWords.forEach(word => {
         const isBookmarked = bookmarks.includes(word.id);
         const schedule = AppState.stats.reviewSchedule[book.id]?.[word.id];

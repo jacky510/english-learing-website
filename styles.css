@@ -1103,17 +1103,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Learning Actions */
 .learning-actions {
-  position: fixed;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   gap: 12px;
   padding: 16px 24px;
   background: var(--surface);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
-  z-index: 100;
+  box-shadow: var(--shadow);
+  justify-content: center;
+  margin-top: 16px;
 }
 
 .learning-mode-toggle {

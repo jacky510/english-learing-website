@@ -1111,6 +1111,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow);
   justify-content: center;
   margin-top: 16px;
+  width: 100%;
 }
 
 .learning-mode-toggle {
@@ -1451,8 +1452,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .learning-actions {
-    width: calc(100% - 32px);
-    bottom: 70px;
+    width: 100%;
   }
 
   .btn-learning {
